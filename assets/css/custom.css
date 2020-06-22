@@ -1,0 +1,99 @@
+
+.aciTreeLi:hover  {
+    background: #ebeef3 !important;
+}
+.btn-class {
+    border-radius: 0px;
+}
+.no-radius {
+    border-radius: 0px;
+}
+
+.panel-link-heading:hover{
+    color:goldenrod !important;
+    border-bottom:2px goldenrod solid;
+}
+
+.create-class-form {
+    display: none;
+}
+
+.custon-icon {
+
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 17px;
+}
+.nav-link:hover {
+    border-bottom:1px white solid;
+    color:goldenrod !important;
+}
+
+.aciTreeText {
+    font-size: 15px !important; font-weight: bold; color:cadetblue;
+}
+
+.aciTreeItem {
+    /*background: red;*/
+    width:240px;
+}
+
+.aciTreeItem:hover {
+    background: #1a354b;
+}
+
+.aciTreeButton:hover {
+    background: lightcoral !important;
+}
+
+.wcLayoutPane {
+    width: 380px;
+    border:0px red solid;
+}
+
+.wcIFrame {
+    top: 32px; left: 393px; width: 78.5%; height: 800px;
+}
+
+#nav-menu-tables {
+    color:#326690;
+    border-bottom:3px solid #326690;
+}
+
+.data-table-list-menu {
+    text-align: center;
+    border:1px gainsboro solid; width:100%; background: ghostwhite;
+}
+
+.data-table-list-menu a {
+    cursor:pointer !important;
+    padding:4px !important;
+    font-weight: bold !important;
+}
+
+.wcPanelTab {
+    min-width: 100px !important;
+    /*border: 1px red solid;*/
+    /*margin: 3px 10px 3px 3px !important;*/
+    padding:3px !important;
+}
+
+.table input[type='text'] {
+    background: ghostwhite;
+
+    /*width: 100% !important;*/
+    /*border: 0px red solid !important;*/
+    /*text-align: left !important;*/
+}
+
+.table td:hover, .table input:hover {
+    cursor:pointer;
+}
+
+.inputTextMinView {
+    width: 100% !important;
+    border: 0px red solid !important;
+    text-align: left !important;
+}

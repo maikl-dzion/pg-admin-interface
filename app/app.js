@@ -15,7 +15,7 @@ const App = new Vue({
 
         return {
             inputHasClass : false,
-            pageName : 'data_managament_page',
+            pageName : 'data_control',
             showPanel: true,
             tableName: '',
             tableListSheme: [],
@@ -51,6 +51,12 @@ const App = new Vue({
                 tables    : 'Таблицы',
                 users     : 'Пользователи',
                 get_roles : 'Роли',
+            },
+
+            sitePagesMenu : {
+                base_control : 'Управление базой',
+                data_control : 'Управление данными',
+                sql_editor   : 'SQL-редактор',
             },
 
             userPriv : {
@@ -97,6 +103,10 @@ const App = new Vue({
     },
 
     methods: {
+
+        setPageName(pageName) {
+            this.pageName = pageName;
+        },
 
         formEmitDataRender(data) {
 

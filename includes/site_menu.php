@@ -7,24 +7,14 @@
     <div class="collapse navbar-collapse" >
 
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active dropdown">
-                <a @click="pageName = 'base_managament_page'"  class="nav-link dropdown-toggle1" style="cursor:pointer" >
-                    Конфигурирование базы <span class="caret" ></span>
-                </a>
-
-<!--                <ul class="dropdown-menu" role="menu">-->
-<!--                    <<li><a href="#" class="dropdown-item"><span> Сброс интерфейса</span></a></li>-->
-<!--                    <li><a href="#" class="dropdown-item"><span > Сброс интерфейса</span></a></li>-->
-<!--                </ul>-->
-
-            </li>
-
-            <li class="nav-item active dropdown">
-                <a @click="pageName = 'data_managament_page'" class="nav-link dropdown-toggle1" style="cursor:pointer" >
-                    Данные <span class="caret" ></span>
-                </a>
-            </li>
-
+            <template v-for="(title, pageName) in sitePagesMenu" >
+                <li class="nav-item active dropdown">
+                    <a @click="setPageName(pageName)"
+                        class="nav-link dropdown-toggle1" style="cursor:pointer" >
+                        {{title}} <span class="caret" ></span>
+                    </a>
+                </li>
+            </template>
         </ul>
 
         <ul class="navbar-nav">

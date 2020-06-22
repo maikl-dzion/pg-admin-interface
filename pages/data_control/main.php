@@ -1,5 +1,5 @@
-<?php // include DATA_PAGE . '/nav.php'; ?>
-<?php // include DATA_PAGE . '/sql_editor.php'; ?>
+<?php // include DATA_CONTROL . '/nav.php'; ?>
+<?php // include DATA_CONTROL . '/sql_editor.php'; ?>
 
 <!--- Панель над таблицей ----->
 <div style="position:relative; border:0px red solid; cursor:default;">

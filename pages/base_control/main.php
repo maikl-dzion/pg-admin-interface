@@ -10,7 +10,7 @@
                 </div>
                 <!-- {{tableName}} -->
 
-                <?php require DB_PAGE .'/actions_panel.php'  ; ?>
+                <?php require BASE_CONTROL .'/actions_panel.php'  ; ?>
 
                 <template v-if="commonActionName == 'tables'" >
 
@@ -100,10 +100,6 @@
             </div></div>
     </td></tr></tbody></table>
 </div>
-
-
-
-
 
 
 

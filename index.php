@@ -11,151 +11,37 @@ define('APP_VUE'       , 'app');
 define('INCLUDES_PATH' , __DIR__ . '/includes');
 define('PAGES_PATH'    , __DIR__ . '/pages');
 
-define('DB_PAGE'   , PAGES_PATH . '/dbase_control');
-define('DATA_PAGE' , PAGES_PATH . '/data_control');
+define('BASE_CONTROL' , PAGES_PATH . '/base_control');
+define('DATA_CONTROL' , PAGES_PATH . '/data_control');
+
 
 ?>
 
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>pgAdmin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <?php require INCLUDES_PATH . '/page_head.php'; ?>
-
-    <script>
-        const apiUrl = 'http://bolderfest.ru/API_DB_CONTROL_PANEL/api.php';
-    </script>
-
-    <style>
-         .aciTreeLi:hover  {
-             background: #ebeef3 !important;
-         }
-         .btn-class {
-             border-radius: 0px;
-         }
-         .no-radius {
-             border-radius: 0px;
-         }
-
-         .panel-link-heading:hover{
-             color:goldenrod !important;
-             border-bottom:2px goldenrod solid;
-         }
-
-         .create-class-form {
-             display: none;
-         }
-
-         .custon-icon {
-
-         }
-
-         .nav-link {
-             font-weight: bold;
-             font-size: 17px;
-         }
-         .nav-link:hover {
-             border-bottom:1px white solid;
-             color:goldenrod !important;
-         }
-
-         .aciTreeText {
-             font-size: 15px !important; font-weight: bold; color:cadetblue;
-         }
-
-         .aciTreeItem {
-             /*background: red;*/
-             width:240px;
-         }
-
-         .aciTreeItem:hover {
-             background: #1a354b;
-         }
-
-         .aciTreeButton:hover {
-             background: lightcoral !important;
-         }
-
-         .wcLayoutPane {
-             width: 380px;
-             border:0px red solid;
-         }
-
-         .wcIFrame {
-             top: 32px; left: 393px; width: 78.5%; height: 800px;
-         }
-
-         #nav-menu-tables {
-             color:#326690;
-             border-bottom:3px solid #326690;
-         }
-
-         .data-table-list-menu {
-             text-align: center;
-             border:1px gainsboro solid; width:100%; background: ghostwhite;
-         }
-
-         .data-table-list-menu a {
-             cursor:pointer !important;
-             padding:4px !important;
-             font-weight: bold !important;
-         }
-
-         .wcPanelTab {
-             min-width: 100px !important;
-             /*border: 1px red solid;*/
-             /*margin: 3px 10px 3px 3px !important;*/
-             padding:3px !important;
-         }
-
-         .table input[type='text'] {
-             background: ghostwhite;
-
-             /*width: 100% !important;*/
-             /*border: 0px red solid !important;*/
-             /*text-align: left !important;*/
-         }
-
-         .table td:hover, .table input:hover {
-             cursor:pointer;
-         }
-
-         .inputTextMinView {
-             width: 100% !important;
-             border: 0px red solid !important;
-             text-align: left !important;
-         }
-
-         /* <i class="material-icons"
-               style="font-size: 15px; color:gainsboro; vertical-align: middle; margin-right:10px;" >
-               backspace</i> */
-
-    </style>
-
+    <script> const apiUrl = 'http://bolderfest.ru/API_DB_CONTROL_PANEL/api.php'; </script>
+    <style></style>
 </head>
 <body class="wcDesktop" >
-
 <div id="app-page" >
     <div class="pg-docker" style="border:0px red solid;">
 
         <?php require INCLUDES_PATH . '/site_menu.php'; ?>
 
-        <template v-if="pageName == 'base_managament_page'" >
+        <template v-if="pageName == 'base_control'" >
 
             <div class="wcDocker" style="background: #ebeef3;" >
-                <?php require DB_PAGE . '/left_panel.php'; ?>
-                <?php require DB_PAGE .'/nav.php'  ; ?>
+                <?php require BASE_CONTROL . '/left_panel.php'; ?>
+                <?php require BASE_CONTROL . '/nav.php'  ; ?>
                 <div class="wcIFrame" style="" >
-                    <?php require DB_PAGE . '/main.php'; ?>
+                    <?php require BASE_CONTROL . '/main.php'; ?>
                 </div>
             </div>
 
         </template>
-        <template v-else-if="pageName == 'data_managament_page'" >
+        <template v-else-if="pageName == 'data_control'" >
 
             <div class="wcDocker">
                 <div class="wcLayoutPane" style="width: 100%; left: 0px; top: 0px; bottom: 0px;">
@@ -164,13 +50,16 @@ define('DATA_PAGE' , PAGES_PATH . '/data_control');
                             <div class="pg-panel-content pg-no-overflow pg-el-container" >
                                 <div class="obj_properties container-fluid" >
                                     <div class="wcIFrame" style="top: 32px; left: 20px; width: 98%; height: 808px;">
-                                        <?php include DATA_PAGE . '/main.php'; ?>
+                                        <?php require DATA_CONTROL . '/main.php'; ?>
                                     </div>
                                     <div class="wcIFrameFocus"></div>
 
                         </div></div></td></tr></tbody></table>
             </div></div></div>
 
+        </template>
+        <template v-else-if="pageName == 'sql_editor'" >
+              
         </template>
 
     </div>

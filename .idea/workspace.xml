@@ -2,17 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e48e95a3-84da-4352-8ae9-b2ae49a22498" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/page_head.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/page_head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/site_menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/site_menu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/data_management/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/data_control/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/data_management/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/data_control/nav.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/data_management/sql_editor.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/data_control/sql_editor.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/data_management/tmp/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/data_control/tmp/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/data_management/tmp/main1.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/data_control/tmp/main1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/db_management/actions_panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dbase_control/actions_panel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/db_management/left_panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dbase_control/left_panel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/db_management/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dbase_control/main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/db_management/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/dbase_control/nav.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/data_control/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/data_control/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dbase_control/actions_panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_control/actions_panel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dbase_control/left_panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_control/left_panel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dbase_control/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_control/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/dbase_control/nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_control/nav.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,22 +31,30 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="1" />
+          <entry key="css" value="5" />
+          <entry key="js" value="2" />
+          <entry key="php" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="1" />
+          <entry key="CSS" value="5" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PHP" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="19" />
+          <entry key="css" value="1" />
+          <entry key="js" value="109" />
+          <entry key="php" value="377" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="19" />
+          <entry key="CSS" value="1" />
+          <entry key="JavaScript" value="109" />
+          <entry key="PHP" value="377" />
         </counts>
       </usages-collector>
     </session>
@@ -55,9 +64,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            <state relative-caret-position="299">
+              <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/data_control/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="107" column="6" lean-forward="true" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/data_control/nav.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-2691" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/data_control/sql_editor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-276" />
           </provider>
         </entry>
       </file>
@@ -69,6 +104,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/assets/css/custom.css" />
+        <option value="$PROJECT_DIR$/includes/page_head.php" />
+        <option value="$PROJECT_DIR$/app/components.js" />
+        <option value="$PROJECT_DIR$/pages/data_control/main.php" />
+        <option value="$PROJECT_DIR$/app/app.js" />
+        <option value="$PROJECT_DIR$/includes/site_menu.php" />
+        <option value="$PROJECT_DIR$/pages/base_control/main.php" />
         <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
@@ -80,9 +122,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="192" />
-    <option name="y" value="151" />
-    <option name="width" value="1351" />
+    <option name="x" value="247" />
+    <option name="y" value="148" />
+    <option name="width" value="1441" />
     <option name="height" value="894" />
   </component>
   <component name="ProjectView">
@@ -106,7 +148,35 @@
             <path>
               <item name="pg-admin-interface" type="b2602c69:ProjectViewProjectNode" />
               <item name="pg-admin-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pg-admin-interface" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pg-admin-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pg-admin-interface" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pg-admin-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pg-admin-interface" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pg-admin-interface" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pg-admin-interface" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pg-admin-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="base_control" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pg-admin-interface" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pg-admin-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="data_control" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -142,19 +212,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592838373308</updated>
-      <workItem from="1592838374520" duration="1168000" />
+      <workItem from="1592838374520" duration="3677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1168000" />
+    <option name="totallyTimeSpent" value="3677000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="192" y="151" width="1351" height="894" extended-state="0" />
+    <frame x="247" y="148" width="1441" height="894" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19442293" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18175235" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -181,10 +251,109 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/css/plugin.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/my_custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2601" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1656" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/page_head.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="68" selection-start-line="3" selection-start-column="68" selection-end-line="3" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+          <folding>
+            <element signature="n#style#0;n#i#0;n#button#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="98" column="1" selection-start-line="98" selection-start-column="1" selection-end-line="98" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="55" column="25" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/site_menu.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#nav#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#li#0;n#ul#0;n#div#0;n#nav#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/base_control/left_panel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/base_control/nav.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="69" lean-forward="true" selection-start-line="9" selection-start-column="69" selection-end-line="9" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/base_control/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="88" column="77" lean-forward="true" selection-start-line="88" selection-start-column="77" selection-end-line="88" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/base_control/actions_panel.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/data_control/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="107" column="6" lean-forward="true" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/data_control/nav.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2691" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/data_control/sql_editor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-276" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="299">
+          <caret line="61" column="14" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

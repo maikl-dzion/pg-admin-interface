@@ -62,25 +62,18 @@ Vue.component('my-btn', {
 
 ////////////////////////////////
 Vue.component('ico', {
-    props : ['i', 'color', 'size'],
+    props : ['name', 'color', 'param'],
     data: function () {
-        let font = '10';
-        let coler = 'gainsboro';
-        if(!this.color) coler = this.color;
-        if(!this.size) font = this.size;
-        let iconName = this.i;
+        let colouring = 'white';
+        if(!this.color) colouring = this.color;
         return {
-            iconName,
-            coler,
-            font,
+            colouring,
         }
     },
     computed : {},
     template: `
-       <!--<div class="icon-box" >-->
-          <i class="material-icons custom-icon"
-              :style="'font-size:' +font+ 'px; color:' + coler" >{{iconName}}</i>
-        <!--</div>-->
+       <i  class="material-icons custom-icon"
+          :style="'font-size: 18px; color: ' +colouring+ '; vertical-align: middle; margin-right: 10px;'" >{{name}}</i>
     `,
 });
 
