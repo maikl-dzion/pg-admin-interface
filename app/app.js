@@ -15,7 +15,7 @@ const App = new Vue({
 
         return {
             inputHasClass : false,
-            pageName : 'data_control',
+            pageName : 'sql_editor',
             showPanel: true,
             tableName: '',
             tableListSheme: [],
@@ -63,6 +63,8 @@ const App = new Vue({
                 setName : '',
                 delName : '',
             },
+
+            queryResultItems : {},
         }
     },
 
@@ -103,6 +105,34 @@ const App = new Vue({
     },
 
     methods: {
+
+        t1() {
+            lg('tyuuu');
+        },
+
+        setSqlCommandType(commandType, sqlName = null) {
+              this.sqlCommandType = commandType;
+              let sql = `SELECT * FROM table_name`;
+              switch (sqlName) {
+                  case 'create_table' :
+                        sql = `CREATE TABLE  tableName (
+                                  id SERIAL
+                               )`;
+                        break;
+              }
+              this.sqlCommand = sql;
+        },
+
+        queryExecute() {
+            // debugger;
+            if(!this.sqlCommand) {
+                alert('Пустая команда');
+                return false;
+            }
+            if(!this.sqlCommandType)
+                this.sqlCommandType = 'query';
+            this.execSqlCommand('queryResultItems');
+        },
 
         setPageName(pageName) {
             this.pageName = pageName;

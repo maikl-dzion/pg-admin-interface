@@ -35,8 +35,7 @@ Vue.component('my-btn', {
     props : ['args', 'icon'],
     data: function () {
         let icon = '';
-        if(this.icon)
-            icon = this.icon;
+        if(this.icon) icon = this.icon;
         return {
            iconName : icon,
         }
@@ -65,7 +64,7 @@ Vue.component('ico', {
     props : ['name', 'color', 'param'],
     data: function () {
         let colouring = 'white';
-        if(!this.color) colouring = this.color;
+        if(this.color) colouring = this.color;
         return {
             colouring,
         }
@@ -459,6 +458,7 @@ Vue.component('alert-message', {
 
 //////////////////////////////////
 Vue.component('sql-query-form-extend', {
+
     props : ['table_name'],
     mixins: [Http, BaseMixin, dragMixin],
     data: function () {
