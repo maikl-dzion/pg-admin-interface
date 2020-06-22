@@ -11,9 +11,8 @@ define('APP_VUE'       , 'app');
 define('INCLUDES_PATH' , __DIR__ . '/includes');
 define('PAGES_PATH'    , __DIR__ . '/pages');
 
-define('DB_PAGE'   , PAGES_PATH . '/db_management');
-define('DATA_PAGE' , PAGES_PATH . '/data_management');
-
+define('DB_PAGE'   , PAGES_PATH . '/dbase_control');
+define('DATA_PAGE' , PAGES_PATH . '/data_control');
 
 ?>
 
