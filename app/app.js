@@ -116,9 +116,20 @@ const App = new Vue({
               switch (sqlName) {
                   case 'create_table' :
                         sql = `CREATE TABLE  tableName (
-                                  id SERIAL
-                               )`;
+                                  id SERIAL,
+                                  name VARCHAR(250) NULL,
+                                  role INTEGER NULL, 
+                                  note TEXT NULL,
+                                  email VARCHAR (350) UNIQUE NOT NULL,
+                                  created_at TIMESTAMP NOT NULL
+                              )`;
                         break;
+                  case 'create_field' :
+                          sql = `ALTER TABLE  tableName (
+                                 ADD new_field varchar(250)
+                          )`;
+                      break;
+
               }
               this.sqlCommand = sql;
         },

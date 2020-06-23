@@ -9,6 +9,10 @@
              <div><a @click="setSqlCommandType('exec', 'create_table')" style="cursor:pointer"
                      class="panel-link-heading">Создание таблицы</a></div>
         </div>
+        <div class="wcPanelTab" >
+             <div><a @click="setSqlCommandType('exec', 'create_field')" style="cursor:pointer"
+                    class="panel-link-heading">Добавление нового поля</a></div>
+        </div>
     </div>
     <div class="wcFrameButtonBar" style="" ></div>
 </div>
