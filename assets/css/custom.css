@@ -24,7 +24,8 @@
 
 .nav-link {
     font-weight: bold;
-    font-size: 17px;
+    font-size: 16px;
+    font-weight: normal;
 }
 .nav-link:hover {
     border-bottom:1px white solid;
@@ -68,6 +69,7 @@
     width:100%;
     background: ghostwhite;
     min-width: 130px !important;
+    max-width: 200px !important;
 }
 
 .data-table-list-menu a {
