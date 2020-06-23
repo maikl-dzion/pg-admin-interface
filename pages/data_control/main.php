@@ -1,32 +1,3 @@
-<?php // include DATA_CONTROL . '/nav.php'; ?>
-<?php // include DATA_CONTROL . '/sql_editor.php'; ?>
-
-<!--- Панель над таблицей ----->
-<div style="position:relative; border:0px red solid; cursor:default;">
-
-    <div class="wcFrameTitleBar wcTabTop"
-         style="height:34px; position: relative; z-index:50; width: 100%; cursor:default; border:0px red solid; background: none">
-        <div class="wcTabScroller" style="cursor:default;">
-            <template v-for="(item, tabName) in tableList">
-                <div @click="cssClassToggle($event, '.wcPanelTab', 'wcPanelTabActive')"
-                     class="wcPanelTab"  style="cursor:pointer;">
-                     <div v-if="tabName != 'products'"
-                          @click="getTableFields(tabName)" class="data-table-list-menu"  >
-                          <a class="panel-link-heading">{{tabName}}</a>
-                     </div>
-                </div>
-            </template>
-        </div>
-        <div class="wcFrameButtonBar" style="cursor:default;">
-
-            <my-btn icon="playlist_add" :args="{}" >
-                Открыть SQL редактор
-            </my-btn>
-        </div>
-    </div>
-
-</div>
-<!------- End -------->
 
 <template v-if="tableName"  >
     <div style="position: relative; margin:10px 0px 10px 0px" >

@@ -15,7 +15,7 @@ const App = new Vue({
 
         return {
             inputHasClass : false,
-            pageName : 'sql_editor',
+            pageName : 'data_control',
             showPanel: true,
             tableName: '',
             tableListSheme: [],
@@ -57,6 +57,12 @@ const App = new Vue({
                 base_control : 'Управление базой',
                 data_control : 'Управление данными',
                 sql_editor   : 'SQL-редактор',
+            },
+
+            sqlCommandListMenu : {
+                select_data  : { title : 'Выборка данных'  , type : 'query'},
+                create_table : { title : 'Создание таблицы', type : 'exec' },
+                create_field : { title : 'Создание поля'  , type : 'exec' },
             },
 
             userPriv : {
@@ -110,10 +116,11 @@ const App = new Vue({
             lg('tyuuu');
         },
 
-        setSqlCommandType(commandType, sqlName = null) {
+        setSqlCommandType(sqlName, commandType) {
               this.sqlCommandType = commandType;
               let sql = `SELECT * FROM table_name`;
               switch (sqlName) {
+                  case 'select_data'  : break;
                   case 'create_table' :
                         sql = `CREATE TABLE  tableName (
                                   id SERIAL,
@@ -131,11 +138,11 @@ const App = new Vue({
                       break;
 
               }
+
               this.sqlCommand = sql;
         },
 
         queryExecute() {
-            // debugger;
             if(!this.sqlCommand) {
                 alert('Пустая команда');
                 return false;
@@ -147,6 +154,7 @@ const App = new Vue({
 
         setPageName(pageName) {
             this.pageName = pageName;
+            $('.wcPanelTab').removeClass('wcPanelTabActive');
         },
 
         formEmitDataRender(data) {

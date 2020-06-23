@@ -15,15 +15,14 @@ define('BASE_CONTROL', PAGES_PATH . '/base_control');
 define('DATA_CONTROL', PAGES_PATH . '/data_control');
 define('SQL_EDITOR'  , PAGES_PATH . '/sql_editor');
 
+
 ?>
 
 <!DOCTYPE html>
 <html class="no-js">
 <head>
     <?php require INCLUDES_PATH . '/page_head.php'; ?>
-    <script>
-        const apiUrl = 'http://bolderfest.ru/API_DB_CONTROL_PANEL/api.php';
-    </script>
+    <script> const apiUrl = 'http://bolderfest.ru/API_DB_CONTROL_PANEL/api.php'; </script>
     <style></style>
 </head>
 <body class="wcDesktop">
@@ -31,14 +30,13 @@ define('SQL_EDITOR'  , PAGES_PATH . '/sql_editor');
     <div class="pg-docker" style="border:0px red solid;">
 
         <?php require INCLUDES_PATH . '/site_menu.php'; ?>
-        <?php require INCLUDES_PATH . '/pages_nav.php'; ?>
 
         <template v-if="pageName == 'base_control'">
 
             <div class="wcDocker" style="background: #ebeef3;">
                 <?php require BASE_CONTROL . '/left_panel.php'; ?>
-                <?php // require BASE_CONTROL . '/nav.php'; ?>
-                <div class="wcIFrame" >
+                <?php require BASE_CONTROL . '/nav.php'; ?>
+                <div class="wcIFrame" style="">
                     <?php require BASE_CONTROL . '/main.php'; ?>
                 </div>
             </div>

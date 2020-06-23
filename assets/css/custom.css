@@ -64,7 +64,10 @@
 
 .data-table-list-menu {
     text-align: center;
-    border:1px gainsboro solid; width:100%; background: ghostwhite;
+    border:1px gainsboro solid;
+    width:100%;
+    background: ghostwhite;
+    min-width: 130px !important;
 }
 
 .data-table-list-menu a {
@@ -96,4 +99,10 @@
     width: 100% !important;
     border: 0px red solid !important;
     text-align: left !important;
+}
+
+.navigation-panel {
+    position:relative;
+    border:0px red solid;
+    cursor:default;
 }
