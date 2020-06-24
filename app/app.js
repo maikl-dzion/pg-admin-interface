@@ -374,6 +374,9 @@ const App = new Vue({
             this.http(url).then(resp => {
                 this.getTableFields(this.tableName);
                 this.addFieldFlag = false;
+                this.getTableFields(this.tableName, resp => {
+                    this.commonItem = resp;
+                });
                 this.alertSuccess('Новое поле успешно добавлено');
                 this.getTableListSheme();
             });
