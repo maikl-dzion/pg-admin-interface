@@ -3,7 +3,7 @@
 
     <div v-if="tableName" class="" style="position:relative; margin:10px 0px 30px 0px !important;">
         <div class="accordian-group pg-el-12">
-            <div class="accordian-content pg-el-12 collapse show" >
+            <div class="accordian-content pg-el-12 collapse show" style="border:0px red solid; margin:10px 0px 100px 0px !important;" >
 
                 <template v-for="(item, fname) in commonItem" >
                     <div class="pgadmin-control-group form-group row pg-el-12 name">
@@ -82,3 +82,5 @@
             </div>
         </div></div>
 </template>
+
+

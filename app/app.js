@@ -17,6 +17,7 @@ const App = new Vue({
             inputHasClass : false,
             pageName : 'base_control',
             showPanel: true,
+            actionPanelShow : true,
             tableName: '',
             tableListSheme: [],
             tableList: [],

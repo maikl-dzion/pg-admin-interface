@@ -32,14 +32,27 @@
 
             <!------ Main Header ------>
             <div class="wcFrameTitleBar wcTabTop" style="width:100%; postion:relative ">
-                <div class="wcTabScroller" style="postion:relative">
+                <div class="wcTabScroller" style="postion:relative; cursor:default">
 
-                    <!--                    <div class="wcPanelTab" >-->
-                    <!--                        <div><a href="#"  class="panel-link-heading1" >Панель информации</a></div>-->
-                    <!--                    </div>-->
-                    <!--                    <div class="wcPanelTab" >-->
-                    <!--                        <div><a href="#"  class="panel-link-heading1" >Свойства</a></div>-->
-                    <!--                    </div>-->
+                    <div class="wcPanelTab" style="cursor:default" >
+                        <div style="cursor:default; overflow: inherit !important;" >
+                            <a @click="actionPanelShow = !actionPanelShow" class="panel-link-heading"
+                                style="text-align:center; cursor:pointer; display: block; width:190px; border-bottom: 1px gainsboro solid" >
+                                Открыть / закрыть панель
+                        </a></div>
+                    </div>
+
+<!--                    <div class="wcPanelTab" >-->
+<!--                        <div><a class="panel-link-heading" >Свойства</a></div>-->
+<!--                    </div>-->
+
+<!--                    <ul class="nav nav-tabs" >-->
+<!--                        <li class="nav-item">-->
+<!--                            <a class="nav-link" > Общие </a>-->
+<!--                        </li><li class="nav-item">-->
+<!--                            <a class="nav-link" > Соединение</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
 
                 </div>
             </div>
@@ -52,7 +65,8 @@
                     <div class="pg-panel-content" style="position: relative !important; width: 100%;">
                         <div class="negative-space p-2">
 
-                            <div style="margin:5px 0px 10px 0px; border:0px gainsboro solid; position: relative !important; display: flex">
+                            <div v-if="actionPanelShow"
+                                 style="margin:5px 0px 10px 0px; border:0px gainsboro solid; position: relative !important; display: flex">
                                 <?php require BASE_CONTROL .'/actions_panel.php'  ; ?>
                             </div><hr>
 
