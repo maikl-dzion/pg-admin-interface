@@ -33,7 +33,7 @@
 }
 
 .aciTreeText {
-    font-size: 15px !important; font-weight: bold; color:cadetblue;
+    /*font-size: 15px !important; font-weight: bold; color:cadetblue;*/
 }
 
 .aciTreeItem {
@@ -108,3 +108,10 @@
     border:0px red solid;
     cursor:default;
 }
+
+.navTabPanelActive {
+    border-bottom: 3px solid #326690;
+    color: #326690;
+}
+
+/*border: 1px solid #dde0e6;*/

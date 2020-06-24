@@ -15,7 +15,7 @@ const App = new Vue({
 
         return {
             inputHasClass : false,
-            pageName : 'data_control',
+            pageName : 'base_control',
             showPanel: true,
             tableName: '',
             tableListSheme: [],
@@ -80,24 +80,23 @@ const App = new Vue({
 
         // this.getTableIdName('users');
         // this.getTableList(this.getTableFields);
-        this.http('GET_TABLE_LIST').then(resp => {
+        // this.getTableFields('person');
+
+        this.http('GET_TABLE_LIST').then(response => {
             this.getTableListSheme();
-            this.tableList = resp;
-            for (var name in resp) {
-                // this.commonForm(resp[name]);
-                // this.getTableFields(name);
-                return;
+            this.tableList = response;;
+            for (var tabName in this.tableList) {
+                let item = this.tableList[tabName];
+                this.getTableFields(tabName);
+                this.commonForm(item, 'tables');
+                break;
             }
         });
-
-        // this.saveConfig();
-        // this.showDatabaseList();
-        // this.getCurrentDatabase();
-        // this.getDbUsers();
 
     },
 
     mounted(){
+
         this.openFormBtnClick('createNewUserForm');
         this.openFormBtnClick('createNewTableForm');
         this.openFormBtnClick('createNewFieldForm');

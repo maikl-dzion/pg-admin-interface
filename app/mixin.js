@@ -211,7 +211,6 @@ const BaseMixin = {
                 this.sqlCommand = command;
                 this.execSqlCommand(paramName);
             }
-
         },
 
         sqlQueryResult(resp) {
@@ -243,7 +242,7 @@ const BaseMixin = {
             });
         },
 
-        commonAction(actionName, event) {
+        commonAction(actionName, event = null) {
             this.commonItem = [];
             this.dbRoles    = [];
             this.commonItemName = this.freeSqlCommandResult = '';
@@ -254,22 +253,24 @@ const BaseMixin = {
                 case 'tables'     : title = 'Таблицы';      break;
                 case 'databases'  : title = 'Базы';         break;
                 case 'get_roles'  : title = 'Роли';
-                                    this.sqlCommandRun(actionName, event);
+                                    this.sqlCommandRun(actionName);
                                     break;
 
             }
 
             this.commonTitle = title;
 
-            let attrName = 'color';
-            let oldValue = 'grey';
-            let newValue = '#326690';
-            this.htmlElementsRender(event, attrName, oldValue, newValue, 'style');
+            if(event) {
+                let attrName = 'color';
+                let oldValue = 'grey';
+                let newValue = '#326690';
+                this.htmlElementsRender(event, attrName, oldValue, newValue, 'style');
 
-            attrName = 'border-bottom';
-            oldValue = '0px';
-            newValue = '3px solid #326690';
-            this.htmlElementsRender(event, attrName, oldValue, newValue, 'style');
+                attrName = 'border-bottom';
+                oldValue = '0px';
+                newValue = '3px solid #326690';
+                this.htmlElementsRender(event, attrName, oldValue, newValue, 'style');
+            }
 
         },
 

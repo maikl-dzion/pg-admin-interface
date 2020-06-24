@@ -28,20 +28,21 @@ define('SQL_EDITOR'  , PAGES_PATH . '/sql_editor');
 </head>
 <body class="wcDesktop">
 <div id="app-page">
-    <div class="pg-docker" style="border:0px red solid;">
+    <div class="pg-docker" style="border:0px red solid; padding:2px;">
 
         <?php require INCLUDES_PATH . '/site_menu.php'; ?>
+
+        <div style="background: white; margin:3px 0px 3px 0px; padding:3px; ">
+            <current-info
+                    :data_info="curUserInfo"
+            ></current-info>
+        </div>
+
         <?php require INCLUDES_PATH . '/pages_nav.php'; ?>
 
         <template v-if="pageName == 'base_control'">
 
-            <div class="wcDocker" style="background: #ebeef3;">
-                <?php require BASE_CONTROL . '/left_panel.php'; ?>
-                <?php // require BASE_CONTROL . '/nav.php'; ?>
-                <div class="wcIFrame" >
-                    <?php require BASE_CONTROL . '/main.php'; ?>
-                </div>
-            </div>
+            <?php require BASE_CONTROL . '/main.php'; ?>
 
         </template>
         <template v-else-if="pageName == 'data_control'">

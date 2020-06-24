@@ -1,113 +1,70 @@
-<div class="wcPanelTabContent" >
-    <table class="wcLayout wcWide wcTall"><tbody><tr><td>
-        <div class="pg-panel-content pg-no-overflow pg-el-container" >
-            <div class="obj_properties container-fluid">
+<div class="wcDocker" style="position: relative; display: flex; padding:3px; ">
 
-                <div style="background: white; margin:3px 0px 3px 0px; padding:3px; ">
-                    <current-info
-                        :data_info="curUserInfo"
-                    ></current-info>
+    <!--- Левая часть (меню) ------>
+    <div class="wcLayoutPane" style="width: 280px; position: relative !important;">
+        <div class="wcFrame wcWide wcTall"
+             style="position: relative !important; border: 1px solid #dde0e6; border-right: 0">
+
+            <div class="wcFrameTitleBar wcTabTop" style="width:100%; position: relative !important; cursor:default">
+                <div class="wcFrameTitle" style="cursor:default; display: flex">
+                    <span style="text-align: left">{{commonTitle}}</span>
+                    <span v-if="commonItemName" style="font-style: italic;color: darkblue"> :: {{commonItemName}}</span>
                 </div>
-                <!-- {{tableName}} -->
+            </div>
 
-                <?php require BASE_CONTROL .'/actions_panel.php'  ; ?>
-
-                <template v-if="commonActionName == 'tables'" >
-
-                    <div v-if="tableName" class="pg-prop-content col-12 has-pg-prop-btn-group"
-                         style="margin:30px 0px 20px -10px !important;">
-                        <div class="accordian-group pg-el-12">
-                            <div class="accordian-content pg-el-12 collapse show" >
-
-                                <template v-for="(item, fname) in commonItem" >
-                                    <div class="pgadmin-control-group form-group row pg-el-12 name">
-
-                                        <!------ Тип поля ----------------------->
-                                        <label class="control-label pg-el-sm-3 pg-el-12" for="pgC_1267" style="max-width: 240px;">
-                                            {{item['data_type']}}
-                                        </label>
-                                        <!------ Изменить имя поля --------------->
-                                        <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="max-width: 320px;" >
-                                            <input  @change="changeFieldName(fname, commonItem[fname]['column_name'])"
-                                                    v-model="commonItem[fname]['column_name']"
-                                                    :id="'inp-' + fname" class="form-control uneditable-input" style="background-color: #f3f5f9;" >
-                                        </div>
-
-                                        <!------ Изменять тип поля  -------------->
-                                        <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="margin-left:4px; max-width: 100px;" >
-                                            <select v-model="commonItem[fname]['input_type']"
-                                                    @change="changeFieldType(fname, commonItem[fname]['input_type'])" class="form-control"
-                                                    style=" width:100%; height: 100%; cursor:pointer " >
-                                                <option v-for="(item, i) in tableFieldTypes" :value="item.name" >
-                                                    {{item.name}}
-                                                </option>
-                                            </select>
-                                        </div>
-
-                                        <button @click="commonDeleteField(fname)"
-                                                class="btn btn-primary m-1 no-radius"  >
-                                            <i class="material-icons custom-icon"
-                                               style="font-size: 18px; color:red; vertical-align: middle; margin-right:10px;"
-                                            >clear</i>
-                                            Удалить поле
-                                        </button>
-
-<!--                                        @click="commonDeleteField(fname)"-->
-
-                                        <!------ Значение поля по умолчанию ------>
-                                        <div class="pgadmin-controls" style="margin-left:20px; max-width: 100px;" >
-                                            column_default:{{commonItem[fname]['column_default']}}
-                                        </div>
-
-                                    </div>
-                                </template>
-
-                    </div></div></div>
-
-                </template>
-                <template v-else-if="commonActionName == 'users'" >
-
-                    <div v-for="(item, fname) in commonItem" style="display: flex; padding:3px;">
-                        <label style="font-style: italic; width:30%; color:lightseagreen; padding-left:6px;" >{{fname}}</label>
-                        <input v-model="commonItem[fname]" style="font-style: italic; width:100%;"
-                               type="text" class="form-control" :placeholder="fname">
+            <div class="wcPanelTabContent" style="position: relative !important;width: 100%; ">
+                <div class="pg-panel-content" style="position: relative !important; width: 100%;">
+                    <div class="aciTree" style="width: 100% !important;">
+                        <ul class="aciTreeUl" style="width: 100% !important; border:0px red solid; ">
+                            <?php require BASE_CONTROL . '/left_panel.php'; ?>
+                        </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---  / Левая часть (меню) ------>
 
-                </template>
-                <template v-else-if="commonActionName == 'databases'" >
+    <!--- Правая часть (основной контент) ------>
+    <div class="wcLayoutPane"
+         style="min-width: 400px; width: 100%; position: relative !important; border: 1px solid #dde0e6; ">
+        <div class="wcFrame wcWide wcTall" style="postion:relative !important;">
 
-                    <div v-for="(item, fname) in commonItem" style="display: flex; padding:3px;">
-                        <label style="font-style: italic; width:30%; color:lightseagreen; padding-left:6px;" >{{fname}}</label>
-                        <input v-model="commonItem[fname]" style="font-style: italic; width:100%;"
-                               type="text" class="form-control" :placeholder="fname">
+            <!------ Main Header ------>
+            <div class="wcFrameTitleBar wcTabTop" style="width:100%; postion:relative ">
+                <div class="wcTabScroller" style="postion:relative">
+
+                    <!--                    <div class="wcPanelTab" >-->
+                    <!--                        <div><a href="#"  class="panel-link-heading1" >Панель информации</a></div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="wcPanelTab" >-->
+                    <!--                        <div><a href="#"  class="panel-link-heading1" >Свойства</a></div>-->
+                    <!--                    </div>-->
+
+                </div>
+            </div>
+            <!------ / Main Header ------>
+
+            <!------ Main Content ------>
+            <div class="wcFrameCenter wcPanelBackground wcScrollableX wcScrollableY"
+                 style="postion:relative !important;">
+                <div class="wcPanelTabContent" style="postion:relative !important;">
+                    <div class="pg-panel-content" style="position: relative !important; width: 100%;">
+                        <div class="negative-space p-2">
+
+                            <div style="margin:5px 0px 10px 0px; border:0px gainsboro solid; position: relative !important; display: flex">
+                                <?php require BASE_CONTROL .'/actions_panel.php'  ; ?>
+                            </div><hr>
+
+                            <?php require BASE_CONTROL . '/content.php'; ?>
+                        </div>
                     </div>
+                </div>
+            </div>
+            <!------ / Main Content ------>
 
-                </template>
+        </div>
+    </div>
+    <!--- / Правая часть (основной контент) ------>
 
-                <!----- Роли пользователей ---->
-                <template v-if="dbRoles.length" >
-                    <div class="pg-prop-content col-12 has-pg-prop-btn-group"
-                         style="margin-top:30px; margin-left:-10px; margin-bottom:40px !important; scroll:auto">
-                        <div v-for="(role, i) in dbRoles" class="accordian-group pg-el-12">
-                            <div v-for="(value, fname) in role" style="display: flex; padding:3px;">
-                                <label style="font-style: italic; width:30%; color:lightseagreen; padding-left:6px;" >{{fname}}</label>
-                                <input :value="value" style="font-style: italic; width:100%;"
-                                       type="text" class="form-control" :placeholder="fname">
-                            </div>
-                    </div></div>
-                </template>
-
-            </div></div>
-    </td></tr></tbody></table>
-</div>
-
-
-
-<!--                                    <div class="pgadmin-control-group form-group row pg-el-12 description">-->
-<!--                                        <label class="control-label pg-el-sm-3 pg-el-12" for="pgC_1285">Комментарий</label>-->
-<!--                                        <div class="pgadmin-controls pg-el-sm-9 pg-el-12">-->
-<!--                                            <textarea id="pgC_1285" class="form-control " name="description"-->
-<!--                                                      placeholder="" readonly=""-->
-<!--                                                      rows="5" ></textarea>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
+</div><!---- wcDocker --->
