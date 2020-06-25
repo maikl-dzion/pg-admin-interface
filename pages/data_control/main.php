@@ -22,7 +22,7 @@
 <!------ TABLE ------->
 <div v-if="tableName" class="pgadmin-control-group form-group row pg-el-12 columns" style="position:relative">
     <div class="pgadmin-control-group form-group pg-el-12 object subnode" style="" >
-        <table class="table presentation table-bordered table-noouter-border table-hover" >
+        <table class="table presentation table-bordered table-noouter-border table-hover" style="margin:5px 0px 100px 0px !important;" >
             <thead><tr>
 
                 <th v-if="tableName" class="edit-cell"
@@ -80,7 +80,9 @@
 <!----- / TABLE EDIT ----->
 
 <div v-if="formDialog" class="pg-prop-content col-12 has-pg-prop-btn-group"
-     style="position: fixed; z-index: 9999; width:40%; top:40px; left:60% !important; border:0px red solid; background: white ">
+     style="position: fixed; z-index: 9999 !important; width:40%;
+            top:37px; left:60% !important; border:2px #326690 solid;
+            background-color: #ebeef3; box-shadow: 0 0 10px rgba(0,0,0,0.5);" >
      <div class="accordian-group pg-el-12">
 
         <div @click="formDialog = false" class="wcPanelTab" style="cursor: pointer;">
@@ -91,10 +93,10 @@
 
             <template v-for="(value, fieldName) in rowItem" >
                 <div class="pgadmin-control-group form-group row pg-el-12 name">
-                    <label class="control-label pg-el-sm-3 pg-el-12" style="max-width: 200px;">
+                    <label class="control-label pg-el-sm-3 pg-el-12" style="min-width: 200px; width:30%; ">
                            {{fieldName}}
                     </label>
-                    <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="max-width: 320px;" >
+                    <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="min-width: 250px; width: 70%;" >
                         <input  @input="editItem(fieldName, rowItem)"
                                 v-model="rowItem[fieldName]" class="form-control uneditable-input"
                                 style="background-color: #f3f5f9;" >

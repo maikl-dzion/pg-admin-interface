@@ -1,6 +1,6 @@
 <div class="navigation-panel" style="position:relative; margin-bottom:10px;" >
     <div class="wcFrameTitleBar wcTabTop"
-         style="height:38px; position: relative; z-index:50; width: 100%; cursor:default; border:0px red solid; padding-top: 3px; background: none">
+         style="height:38px; position: relative; z-index:0; width: 100%; cursor:default; border:0px red solid; padding-top: 3px; background: none">
         <div class="wcTabScroller" style="cursor:default;">
 
         <template v-if="pageName == 'base_control'">
