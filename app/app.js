@@ -73,6 +73,8 @@ const App = new Vue({
             },
 
             queryResultItems : {},
+
+            newFieldsList : [],
         }
     },
 
@@ -115,6 +117,40 @@ const App = new Vue({
 
         t1() {
             lg('tyuuu');
+        },
+
+        pushFieldToArray() {
+            this.newFieldsList.push({ name : '', type : 'varchar'});
+        },
+
+        addNewFieldsForeach() {
+            let tableName  = this.tableName;
+            let addFieldFn = (tableName, name, type, end = false) => {
+                if (!name) return false;
+                var url = 'ADD_FIELD/' + tableName + '/' + name + '/' + type;
+                this.http(url).then(resp => {
+                    // this.tableName = tableName;
+                    if (end) {
+                        this.getTableFields(tableName, resp => {
+                            this.commonItem = resp;
+                        });
+                        this.getTableListSheme();
+                    }
+                });
+            };
+
+            for(let i in this.newFieldsList) {
+                let f = this.newFieldsList[i];
+                addFieldFn(tableName, f.name, f.type);
+            }
+
+            this.newFieldsList = [];
+        },
+
+        createTableAndFields() {
+            var tableName = this.newTable.name;
+            if (!tableName) return false;
+            this.createTable(this.addNewFieldsForeach);
         },
 
         setSqlCommandType(sqlName, commandType) {
@@ -374,7 +410,7 @@ const App = new Vue({
 
             var url = 'ADD_FIELD/' + this.tableName + '/' + name + '/' + type;
             this.http(url).then(resp => {
-                this.getTableFields(this.tableName);
+                // this.getTableFields(this.tableName);
                 this.addFieldFlag = false;
                 this.getTableFields(this.tableName, resp => {
                     this.commonItem = resp;
@@ -451,7 +487,7 @@ const App = new Vue({
             });
         },
 
-        createTable() {
+        createTable(callback = null) {
             var tableName = this.newTable.name;
             var idName    = this.newTable.idName;
             if (!tableName) return false;
@@ -459,6 +495,8 @@ const App = new Vue({
             var url = 'CREATE_TABLE/' + tableName + '/' + idName;
             this.http(url).then(resp => {
                 this.tableName = tableName;
+                if(callback)
+                    callback(tableName);
                 this.getTableList();
                 this.getTableFields(this.tableName);
                 this.getTableListSheme();

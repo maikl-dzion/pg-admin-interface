@@ -311,14 +311,17 @@ const BaseMixin = {
 
         commonDeleteTable(tableName = '') {
 
-            if(!tableName) {
-                if(!this.tableName) {
-                    alert('Не выбрана таблица');
-                    return false;
-                }
-
-                tableName = this.tableName;
+            if(!tableName && !this.tableName) {
+                alert('Не выбрана таблица');
+                return false;
             }
+
+            if(!tableName)
+                tableName = this.tableName;
+
+            let param = tableName;
+            var isDelete = confirm("Вы точно хотите удалить таблицу: " +param+ "?");
+            if(!isDelete) return false;
 
             var url = 'DELETE_TABLE/' + tableName;
             this.http(url).then(resp => {
@@ -555,6 +558,10 @@ const BaseMixin = {
             let message = 'Не выбрана база';
             let name = this.checkName(dbName, 'selectDbName', message);
             if(!name) return false;
+
+            let param = dbName;
+            var isDelete = confirm("Вы точно хотите удалить базу: " +param+ "?");
+            if(!isDelete) return false;
 
             var url = 'deleteDb/' + name;
             this.http(url).then(resp => {

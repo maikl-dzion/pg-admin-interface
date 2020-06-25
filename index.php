@@ -71,7 +71,7 @@ define('SQL_EDITOR'  , PAGES_PATH . '/sql_editor');
 <!--
 <my-btn icon="playlist_add" :args="{}" >
    Текст кнопки
-/my-btn>
+</my-btn>
 -->
 
 <!--<div class="wcDocker" style="border:1px red solid;">-->

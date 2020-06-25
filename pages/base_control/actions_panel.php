@@ -3,22 +3,63 @@
 <template v-if="commonActionName == 'tables'" >
 
     <!---- Добавление новой таблицы ---->
+
     <div class="pgadmin-control-group form-group"
-         style="width: 250px !important; position: relative; border:1px gainsboro solid; padding:4px" >
+         style="width: 290px !important; position: relative; border:1px gainsboro solid; padding:4px" >
         <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="width: 100%;">
             <input class="form-control" type="text" style="border-radius: 0px"
                    v-model="newTable.name"
                    placeholder="Имя таблицы" >
 
-            <input class="form-control" type="text" style="border-radius: 0px"
-                   v-model="newTable.idName"
-                   placeholder="id" >
+            <div style="display: flex;" >
+                <input class="form-control no-radius" style="width:80%;" type="text"
+                       v-model="newTable.idName"
+                       placeholder="id" >
+
+                <button @click="pushFieldToArray()"
+                        class="btn btn-primary m-1 no-radius"
+                        style="width: 20%; margin:1px 2px 3px 3px !important; ">
+                        <ico name="playlist_add" style="margin:0px; font-size: 22px"></ico>
+                </button>
+            </div>
+
+            <template v-for="(list, i) in newFieldsList" :key="i">
+                <div  style="display: flex" >
+                    <input class="form-control no-radius"  style="" type="text"
+                           v-model="list.name" placeholder="Имя поля" >
+
+                    <select v-model="list.type" class="form-control no-radius"
+                            placeholder="Тип поля" style="cursor:pointer;">
+                        <option v-for="(item, i) in tableFieldTypes" :value="item.name" class="form-control">
+                            {{item.name}}
+                        </option>
+                    </select>
+                </div>
+            </template>
+
         </div>
-        <button @click="createTable()" class="btn btn-primary m-1 no-radius"
+        <button @click="createTableAndFields()" class="btn btn-primary m-1 no-radius"
                 style="width: 98%; margin-left:1px !important; ">
             Добавить новую таблицу
         </button>
     </div>
+
+<!--    <div class="pgadmin-control-group form-group"-->
+<!--         style="width: 250px !important; position: relative; border:1px gainsboro solid; padding:4px" >-->
+<!--        <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="width: 100%;">-->
+<!--            <input class="form-control" type="text" style="border-radius: 0px"-->
+<!--                   v-model="newTable.name"-->
+<!--                   placeholder="Имя таблицы" >-->
+<!---->
+<!--            <input class="form-control" type="text" style="border-radius: 0px"-->
+<!--                   v-model="newTable.idName"-->
+<!--                   placeholder="id" >-->
+<!--        </div>-->
+<!--        <button @click="createTable()" class="btn btn-primary m-1 no-radius"-->
+<!--                style="width: 98%; margin-left:1px !important; ">-->
+<!--            Добавить новую таблицу-->
+<!--        </button>-->
+<!--    </div>-->
     <!---- // Добавление новой таблицы ---->
 
     <!---- Добавление нового поля  -------->
