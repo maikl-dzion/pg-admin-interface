@@ -145,7 +145,6 @@ const BaseMixin = {
             return oldValue;
         },
 
-
         elemUpdated(event, attr, newValue, type = 'style') {
             let el = event.currentTarget;
             //var selector = '#' + target.id;
@@ -238,7 +237,18 @@ const BaseMixin = {
         setDefaultConfig() {
             var url = 'SET_DEFAULT_CONFIG';
             this.http(url).then(resp => {
+                alert('Настройки по умолчанию установлены');
                 var res = resp;
+                this.http('GET_TABLE_LIST').then(response => {
+                    this.getTableListSheme();
+                    this.tableList = response;;
+                    for (var tabName in this.tableList) {
+                        let item = this.tableList[tabName];
+                        this.getTableFields(tabName);
+                        this.commonForm(item, 'tables');
+                        break;
+                    }
+                });
             });
         },
 
@@ -520,6 +530,10 @@ const BaseMixin = {
 
         // Создаем новый конфиг базы
         saveConfig() {
+
+            var isDelete = confirm("Вы точно хотите именить настройки базы?");
+            if(!isDelete) return false;
+
             var url = 'SAVE_CONFIG';
             var postData = this.dbConf;
             this.http(url, postData, 'post').then(resp => {

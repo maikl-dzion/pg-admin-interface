@@ -32,7 +32,7 @@
 
             <!------ Main Header ------>
             <div class="wcFrameTitleBar wcTabTop" style="width:100%; postion:relative ">
-                <div class="wcTabScroller" style="postion:relative; cursor:default">
+                <div class="wcTabScroller" style="postion:relative; cursor:default; width: 100% !important;">
 
                     <div class="wcPanelTab" style="cursor:default" >
                         <div style="cursor:default; overflow: inherit !important;" >

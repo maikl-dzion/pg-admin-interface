@@ -19,6 +19,8 @@ const App = new Vue({
             showPanel: true,
             panelDbPageShow   : true,
             panelDataPageShow : true,
+            confDbUpdateModalOpen : false,
+
             tableName: '',
             tableListSheme: [],
             tableList: [],
