@@ -1,10 +1,25 @@
 
-<template v-if="tableName"  >
+<div class="wcFrameTitleBar1" style="width:100%; postion:relative; border:1px gainsboro solid">
+    <div class="wcTabScroller" style="postion:relative; cursor:default">
+
+        <div class="wcPanelTab" style="cursor:default" >
+            <div style="cursor:default; overflow: inherit !important;" >
+                <a @click="panelDataPageShow = !panelDataPageShow" class="panel-link-heading"
+                   style="text-align:center; cursor:pointer; display: block; width:190px; border-bottom: 1px gainsboro solid" >
+                    Открыть / закрыть панель
+                </a></div>
+        </div>
+
+    </div>
+</div>
+
+
+<template v-if="panelDataPageShow && tableName"  >
     <div style="position: relative; margin:10px 0px 10px 0px" >
 
-        <div class="control-label" style="font-size: 14px; font-style: italic">
-            <h5>Таблица : <span style="font-weight: bold; color:green" >{{tableName}}</span></h5>
-        </div>
+<!--        <div class="control-label" style="font-size: 14px; font-style: italic">-->
+<!--            <h5>Таблица : <span style="font-weight: bold; color:green" >{{tableName}}</span></h5>-->
+<!--        </div>-->
 
         <button  @click="addItem()"
                 class="btn btn-primary no-radius"  style="margin:0px 20px 0px 20px !important;">
@@ -16,13 +31,17 @@
             Изменение размера таблицы
         </button>
 
-    </div>
+    </div><hr>
 </template>
 
+
 <!------ TABLE ------->
-<div v-if="tableName" class="pgadmin-control-group form-group row pg-el-12 columns" style="position:relative">
-    <div class="pgadmin-control-group form-group pg-el-12 object subnode" style="" >
-        <table class="table presentation table-bordered table-noouter-border table-hover" style="margin:5px 0px 100px 0px !important;" >
+<div v-if="tableName"
+     class="container-fluid"
+     style="position:relative !important; overflow: auto !important; border:0px red solid; height: 75%;">
+
+        <table class="table presentation"
+            style="margin:5px 0px 100px 0px !important;" >
             <thead><tr>
 
                 <th v-if="tableName" class="edit-cell"
@@ -45,7 +64,7 @@
 
                     <td class="edit-cell editable sortable renderable"
                         style="min-width:5px !important; padding:0px; margin:0px; background: white;">
-                        <div style="width: 100%; padding:3px; border: 1px red solid" >
+                        <div style="width: 100%; padding:3px; border: 2px red solid" >
                             <i @click="deleteItem(item)" class="material-icons"
                                style="font-size: 15px; color:red; vertical-align: middle; font-weight: bold"
                                >clear</i>
@@ -54,7 +73,7 @@
 
                     <template v-for="(info, fieldName) in tableInfo">
                         <template v-if="isInt(item[fieldName])">
-                            <td class="edit-cell editable sortable renderable" style="min-width:10px !important; padding:0px; margin:0px; background: white; border: 2px red solid ">
+                            <td class="edit-cell editable sortable renderable" style="min-width:10px !important; padding:0px; margin:0px; background: white; border: 1px lightgreen solid ">
                                 <div style="width: 100%; padding:3px; border: 1px gainsboro solid" :title="item[fieldName]">
                                     <input v-if="!info.auto_increment" @input="editItem(fieldName, item)"
                                            v-model="item[fieldName]" type="text" class="form-control-input" style="width: 100%;" >
@@ -75,7 +94,6 @@
                 </tr>
             </tbody>
         </table>
-    </div>
 </div>
 <!----- / TABLE EDIT ----->
 
@@ -86,7 +104,7 @@
      <div class="accordian-group pg-el-12">
 
         <div @click="formDialog = false" class="wcPanelTab" style="cursor: pointer;">
-             <div class="data-table-list-menu">
+             <div class="data-table-list-menu" style="background: red; color:white" >
                  <a class="panel-link-heading">Закрыть</a></div></div>
 
         <div class="accordian-content pg-el-12 collapse show" >

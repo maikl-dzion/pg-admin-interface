@@ -1,4 +1,4 @@
-<div class="wcDocker" style="position: relative; display: flex; padding:3px; ">
+<div class="wcDocker" style="position: relative; display: flex; padding:3px;">
 
     <!--- Левая часть (меню) ------>
     <div class="wcLayoutPane" style="width: 280px; position: relative !important;">
@@ -25,7 +25,7 @@
     </div>
     <!---  / Левая часть (меню) ------>
 
-    <!--- Правая часть (основной контент) ------>
+    <!--- Правая часть (основной контент)   ------>
     <div class="wcLayoutPane"
          style="min-width: 400px; width: 100%; position: relative !important; border: 1px solid #dde0e6; ">
         <div class="wcFrame wcWide wcTall" style="postion:relative !important;">
@@ -36,7 +36,7 @@
 
                     <div class="wcPanelTab" style="cursor:default" >
                         <div style="cursor:default; overflow: inherit !important;" >
-                            <a @click="actionPanelShow = !actionPanelShow" class="panel-link-heading"
+                            <a @click="panelDbPageShow = !panelDbPageShow" class="panel-link-heading"
                                 style="text-align:center; cursor:pointer; display: block; width:190px; border-bottom: 1px gainsboro solid" >
                                 Открыть / закрыть панель
                         </a></div>
@@ -65,7 +65,7 @@
                     <div class="pg-panel-content" style="position: relative !important; width: 100%;">
                         <div class="negative-space p-2">
 
-                            <div v-if="actionPanelShow"
+                            <div v-if="panelDbPageShow"
                                  style="margin:5px 0px 10px 0px; border:0px gainsboro solid; position: relative !important; display: flex">
                                 <?php require BASE_CONTROL .'/actions_panel.php'  ; ?>
                             </div><hr>

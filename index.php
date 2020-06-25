@@ -28,7 +28,7 @@ define('SQL_EDITOR'  , PAGES_PATH . '/sql_editor');
 </head>
 <body class="wcDesktop">
 <div id="app-page">
-    <div class="pg-docker" style="border:0px red solid; padding:2px;">
+    <div class="pg-docker" style="border:0px red solid; padding:2px; background-color: rgb(235, 238, 243);">
 
         <?php require INCLUDES_PATH . '/site_menu.php'; ?>
 
@@ -47,30 +47,7 @@ define('SQL_EDITOR'  , PAGES_PATH . '/sql_editor');
         </template>
         <template v-else-if="pageName == 'data_control'">
 
-            <div class="wcDocker">
-                <div class="wcLayoutPane" style="width: 100%; left: 0px; top: 0px; bottom: 0px;">
-                    <div class="wcPanelTabContent">
-                        <table class="wcLayout wcWide wcTall">
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <div class="pg-panel-content pg-no-overflow pg-el-container">
-                                        <div class="obj_properties container-fluid">
-                                            <div class="wcIFrame"
-                                                 style="top: 32px; left: 20px; width: 98%; height: 808px;">
-                                                <?php require DATA_CONTROL . '/main.php'; ?>
-                                            </div>
-                                            <div class="wcIFrameFocus"></div>
-
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+             <?php require DATA_CONTROL . '/main.php'; ?>
 
         </template>
         <template v-else-if="pageName == 'sql_editor'">
