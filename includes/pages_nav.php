@@ -16,8 +16,7 @@
             </template>
             <!------------      End     -------------->
 
-
-            <div style="width:400px; float: right; display: flex;" >
+            <div style="width:470px; float: right; display: flex;" >
 
                 <button @click="confDbUpdateModalOpen = !confDbUpdateModalOpen" class="btn btn-primary m-1 no-radius"
                         style="width: 50%;">
@@ -26,7 +25,7 @@
 
                 <button @click="setDefaultConfig()" class="btn btn-primary m-1 no-radius"
                         style="width: 50%;">
-                    Базовые настройки
+                    Вернуть базовые настройки
                 </button>
 
             </div><div style="clear:both" ></div>

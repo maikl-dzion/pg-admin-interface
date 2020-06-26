@@ -3,7 +3,6 @@
 <template v-if="commonActionName == 'tables'" >
 
     <!---- Добавление новой таблицы ---->
-
     <div class="pgadmin-control-group form-group"
          style="width: 290px !important; position: relative; border:1px gainsboro solid; padding:4px" >
         <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="width: 100%;">
@@ -23,8 +22,8 @@
                 </button>
             </div>
 
-            <template v-for="(list, i) in newFieldsList" :key="i">
-                <div  style="display: flex" >
+            <template v-for="(list, i) in newFieldsList" >
+                <div  style="display: flex" :key="i" >
                     <input class="form-control no-radius"  style="" type="text"
                            v-model="list.name" placeholder="Имя поля" >
 
@@ -80,7 +79,7 @@
         </div>
         <button @click="addField()" class="btn btn-primary m-1 no-radius"
                 style="width: 98%; margin-left:1px !important; ">
-            Добавить новое поле
+                Добавить новое поле
         </button>
     </div>
     <!---- // Добавление нового поля ----->
@@ -130,6 +129,23 @@
 
         <!---- Прикрепление / открепление  пользователя к базе ---->
         <template v-if="selectDbName" >
+
+            <!---- Скопировать базу ---->
+            <div class="pgadmin-control-group form-group"
+                 style="width: 200px !important; position: relative; border:1px gainsboro solid; padding:4px" >
+                <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="width: 100%;">
+                    <input class="form-control" type="text" style="border-radius: 0px"
+                           v-model="copyDbItem.newDbName"
+                           placeholder="Имя новой базы" >
+                    <input class="form-control" type="text" style="border-radius: 0px"
+                           :value="copyDbItem.dbName = selectDbName" disabled="true">
+                </div>
+                <button @click="copyDb()" class="btn btn-primary m-1 no-radius"
+                        style="width: 98%; margin-left:1px !important; ">
+                    Скопировать базу
+                </button>
+            </div>
+            <!---- Скопировать  базу ---->
 
             <div class="pgadmin-control-group form-group"
                  style="width: 220px !important; position: relative; border:1px gainsboro solid; padding:4px;" >

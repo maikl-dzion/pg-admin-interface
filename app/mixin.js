@@ -531,13 +531,16 @@ const BaseMixin = {
         // Создаем новый конфиг базы
         saveConfig() {
 
-            var isDelete = confirm("Вы точно хотите именить настройки базы?");
+            var isDelete = confirm("Вы точно хотите изменить настройки базы?");
             if(!isDelete) return false;
 
-            var url = 'SAVE_CONFIG';
-            var postData = this.dbConf;
+            let url = 'SAVE_CONFIG';
+            let postData = this.dbConf;
+
             this.http(url, postData, 'post').then(resp => {
-                this.getTableList();
+                alert('Конфигурация базы успешно изменена,страница перезагрузиться');
+                let href = document.location.href;
+                window.location.reload(href);
             });
         },
 
@@ -546,7 +549,7 @@ const BaseMixin = {
             var url = 'GET_CUR_CONFIG';
             this.http(url).then(resp => {
                 this.curConfig = resp;
-                this.dbConf = resp;
+                this.dbConf    = resp;
                 this.dbConfPrint = Object.assign({}, resp);
             });
         },

@@ -66,7 +66,8 @@ const App = new Vue({
             sqlCommandListMenu : {
                 select_data  : { title : 'Выборка данных'  , type : 'query'},
                 create_table : { title : 'Создание таблицы', type : 'exec' },
-                create_field : { title : 'Создание поля'  , type : 'exec' },
+                create_field : { title : 'Создание поля'   , type : 'exec' },
+                copy_db      : { title : 'Скопировать базу', type : 'exec' },
             },
 
             userPriv : {
@@ -76,7 +77,13 @@ const App = new Vue({
 
             queryResultItems : {},
 
-            newFieldsList : [],
+            newFieldsList    : [],
+
+            copyDbItem : {
+                dbName    : '',
+                newDbName : '',
+            },
+
         }
     },
 
@@ -149,6 +156,24 @@ const App = new Vue({
             this.newFieldsList = [];
         },
 
+        copyDb() {
+             let newDbName = this.copyDbItem.newDbName;
+             let dbName = this.copyDbItem.dbName;
+             if(!newDbName) {
+                 alert('Имя базы пустое');
+                 return false;
+             }
+
+             let query = `CREATE DATABASE ${newDbName}
+                          WITH TEMPLATE   ${dbName}`;
+             this.sqlCommandType = 'exec';
+             this.sqlCommand     = query;
+             this.execSqlCommand(null, (response) => {
+                 this.showDatabaseList();
+                 alert('Новая база успешно скопирована');
+             })
+        },
+
         createTableAndFields() {
             var tableName = this.newTable.name;
             if (!tableName) return false;
@@ -176,6 +201,11 @@ const App = new Vue({
                           )`;
                       break;
 
+                  case 'copy_db' :
+                      sql = `CREATE DATABASE new_db_copy
+                             WITH TEMPLATE   source_db
+                            `;
+                      break;
               }
 
               this.sqlCommand = sql;
