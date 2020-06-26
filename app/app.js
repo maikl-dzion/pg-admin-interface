@@ -78,10 +78,16 @@ const App = new Vue({
             queryResultItems : {},
 
             newFieldsList    : [],
+            newFieldsListSecond : [],
 
             copyDbItem : {
                 dbName    : '',
                 newDbName : '',
+            },
+
+            copyTableItem : {
+                name    : '',
+                newName : '',
             },
 
         }
@@ -106,6 +112,8 @@ const App = new Vue({
             }
         });
 
+        this.pushFieldToArray(true);
+
     },
 
     mounted(){
@@ -128,11 +136,18 @@ const App = new Vue({
             lg('tyuuu');
         },
 
-        pushFieldToArray() {
-            this.newFieldsList.push({ name : '', type : 'varchar'});
+        pushFieldToArray(type = false) {
+            if(!type)
+               this.newFieldsList.push({ name : '', type : 'varchar'});
+            else
+               this.newFieldsListSecond.push({ name : '', type : 'varchar'});
         },
 
-        addNewFieldsForeach() {
+        addNewFieldsForeach(fieldList = null) {
+
+            if(!fieldList)
+                fieldList = this.newFieldsList;
+
             let tableName  = this.tableName;
             let addFieldFn = (tableName, name, type, end = false) => {
                 if (!name) return false;
@@ -148,12 +163,20 @@ const App = new Vue({
                 });
             };
 
-            for(let i in this.newFieldsList) {
-                let f = this.newFieldsList[i];
-                addFieldFn(tableName, f.name, f.type);
+            let ch  = 0;
+            let end = false
+            let len = fieldList.length;
+
+            for(let i in fieldList) {
+                ch++;
+                let f = fieldList[i];
+                if(ch == len) end = true;
+                addFieldFn(tableName, f.name, f.type, end);
             }
 
             this.newFieldsList = [];
+            this.newFieldsListSecond = [];
+            this.pushFieldToArray(true);
         },
 
         copyDb() {
@@ -172,6 +195,24 @@ const App = new Vue({
                  this.showDatabaseList();
                  alert('Новая база успешно скопирована');
              })
+        },
+
+        copyTable() {
+            let newName = this.copyTableItem.newName;
+            let name    = this.copyTableItem.name;
+            if(!newName) {
+                alert('Имя новой таблицы пустое');
+                return false;
+            }
+
+            let query = `CREATE TABLE ${newName} AS
+                         TABLE ${name}`;
+            this.sqlCommandType = 'exec';
+            this.sqlCommand     = query;
+            this.execSqlCommand(null, (response) => {
+                this.getTableList();
+                alert('Новая таблица успешно скопирована');
+            })
         },
 
         createTableAndFields() {

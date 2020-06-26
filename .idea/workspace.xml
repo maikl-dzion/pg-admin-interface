@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e48e95a3-84da-4352-8ae9-b2ae49a22498" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/mixin.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/mixin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/pages_nav.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/pages_nav.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/base_control/actions_panel.php" beforeDir="false" afterPath="$PROJECT_DIR$/pages/base_control/actions_panel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,15 +36,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="85" />
-          <entry key="js" value="2952" />
-          <entry key="php" value="5783" />
+          <entry key="js" value="3243" />
+          <entry key="php" value="5979" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="85" />
-          <entry key="JavaScript" value="2944" />
-          <entry key="PHP" value="5783" />
+          <entry key="JavaScript" value="3235" />
+          <entry key="PHP" value="5979" />
           <entry key="SQL" value="8" />
         </counts>
       </usages-collector>
@@ -66,7 +64,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/pages_nav.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
+            <state relative-caret-position="345">
               <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -96,7 +94,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/base_control/left_panel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="713">
               <caret line="31" column="40" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="40" />
             </state>
           </provider>
@@ -105,8 +103,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/base_control/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-322">
-              <caret line="34" column="107" selection-start-line="34" selection-start-column="107" selection-end-line="34" selection-end-column="107" />
+            <state relative-caret-position="230">
+              <caret line="10" column="111" selection-start-line="10" selection-start-column="97" selection-end-line="10" selection-end-column="111" />
               <folding>
                 <marker date="1593100983286" expanded="true" signature="1926:2592" ph="..." />
               </folding>
@@ -114,25 +112,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/base_control/actions_panel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-529">
-              <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+            <state relative-caret-position="506">
+              <caret line="91" column="33" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="33" />
               <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#div#0;n#div#2;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#2;n#template#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#template#0;n#template#2;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#template#0;n#template#2;n#!!top" expanded="true" />
-                <marker date="1593175794701" expanded="true" signature="3434:3769" ph="..." />
+                <marker date="1593178122909" expanded="true" signature="4676:5791" ph="..." />
+                <marker date="1593178122909" expanded="true" signature="5151:5521" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="171" column="22" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
+            <state relative-caret-position="205">
+              <caret line="207" column="51" selection-start-line="207" selection-start-column="51" selection-end-line="207" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -141,7 +146,7 @@
         <entry file="file://$PROJECT_DIR$/app/mixin.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="516" column="12" lean-forward="true" selection-start-line="516" selection-start-column="8" selection-end-line="516" selection-end-column="26" />
+              <caret line="338" column="33" selection-start-line="338" selection-start-column="21" selection-end-line="338" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -172,6 +177,8 @@
       <find>saveConfig</find>
       <find>common</find>
       <find>databaseList</find>
+      <find>getTableList</find>
+      <find>addNewFieldsForeach</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -200,8 +207,8 @@
         <option value="$USER_HOME$/AppData/Local/Temp/scp28790/home/b/bolderp5/shop1.bolderp5.bget.ru/public_html/ARCHIVES/VUE_MIXIN.js" />
         <option value="$PROJECT_DIR$/app/mixin.js" />
         <option value="$PROJECT_DIR$/includes/pages_nav.php" />
-        <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/pages/base_control/actions_panel.php" />
+        <option value="$PROJECT_DIR$/app/app.js" />
       </list>
     </option>
   </component>
@@ -297,12 +304,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592838373308</updated>
-      <workItem from="1592838374520" duration="64073000" />
+      <workItem from="1592838374520" duration="67083000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64073000" />
+    <option name="totallyTimeSpent" value="67083000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="345" y="102" width="1521" height="894" extended-state="0" />
@@ -600,7 +607,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/includes/pages_nav.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="345">
           <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
@@ -628,15 +635,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/base_control/left_panel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
+        <state relative-caret-position="713">
           <caret line="31" column="40" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/base_control/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-322">
-          <caret line="34" column="107" selection-start-line="34" selection-start-column="107" selection-end-line="34" selection-end-column="107" />
+        <state relative-caret-position="230">
+          <caret line="10" column="111" selection-start-line="10" selection-start-column="97" selection-end-line="10" selection-end-column="111" />
           <folding>
             <marker date="1593100983286" expanded="true" signature="1926:2592" ph="..." />
           </folding>
@@ -646,26 +653,33 @@
     <entry file="file://$PROJECT_DIR$/app/mixin.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="516" column="12" lean-forward="true" selection-start-line="516" selection-start-column="8" selection-end-line="516" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="171" column="22" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
+          <caret line="338" column="33" selection-start-line="338" selection-start-column="21" selection-end-line="338" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/base_control/actions_panel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-529">
-          <caret line="4" column="41" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
+        <state relative-caret-position="506">
+          <caret line="91" column="33" selection-start-line="91" selection-start-column="24" selection-end-line="91" selection-end-column="33" />
           <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#1;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#div#0;n#div#2;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#template#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#1;n#div#0;n#div#0;n#template#0;n#template#2;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#template#0;n#template#2;n#!!top" expanded="true" />
-            <marker date="1593175794701" expanded="true" signature="3434:3769" ph="..." />
+            <marker date="1593178122909" expanded="true" signature="4676:5791" ph="..." />
+            <marker date="1593178122909" expanded="true" signature="5151:5521" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="207" column="51" selection-start-line="207" selection-start-column="51" selection-end-line="207" selection-end-column="51" />
         </state>
       </provider>
     </entry>

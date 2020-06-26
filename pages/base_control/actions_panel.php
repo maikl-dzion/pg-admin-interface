@@ -43,45 +43,80 @@
         </button>
     </div>
 
-<!--    <div class="pgadmin-control-group form-group"-->
+
+    <!---- Добавление новых полей ---->
+    <div v-if="tableName"
+         class="pgadmin-control-group form-group" style="width: 290px !important; position: relative; border:1px gainsboro solid; padding:4px" >
+         <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="width: 100%;">
+
+            <div style="display: flex;" >
+                <div style="width: 80%; padding: 4px; font-style: italic; text-align: center;">Добавить поле</div>
+                <button @click="pushFieldToArray(true)"
+                        class="btn btn-primary m-1 no-radius"
+                        style="width: 20%; margin:1px 2px 3px 3px !important; ">
+                    <ico name="playlist_add" style="margin:0px; font-size: 22px"></ico>
+                </button>
+            </div>
+
+            <template v-for="(list, i) in newFieldsListSecond" >
+                <div  style="display: flex" :key="i" >
+                    <input class="form-control no-radius"  style="" type="text"
+                           v-model="list.name" placeholder="Имя поля" >
+
+                    <select v-model="list.type" class="form-control no-radius"
+                            placeholder="Тип поля" style="cursor:pointer;">
+                        <option v-for="(item, i) in tableFieldTypes" :value="item.name" class="form-control">
+                            {{item.name}}
+                        </option>
+                    </select>
+                </div>
+            </template>
+
+        </div>
+        <button @click="addNewFieldsForeach(newFieldsListSecond)" class="btn btn-primary m-1 no-radius"
+                style="width: 98%; margin-left:1px !important; ">
+            Сохранить поля
+        </button>
+    </div>
+
+    <!---- Скопировать таблицу ---->
+    <div class="pgadmin-control-group form-group"
+         style="width: 200px !important; position: relative; border:1px gainsboro solid; padding:4px" >
+        <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="width: 100%;">
+            <input class="form-control" type="text" style="border-radius: 0px; margin-bottom:4px;"
+                   v-model="copyTableItem.newName"
+                   placeholder="Имя новой таблицы" >
+            <input class="form-control" type="text" style="border-radius: 0px"
+                   :value="copyTableItem.name = commonItemName" disabled="true">
+        </div>
+        <button @click="copyTable()" class="btn btn-primary m-1 no-radius"
+                style="width: 98%; margin-left:1px !important; ">
+            Скопировать таблицу
+        </button>
+    </div>
+    <!---- / Скопировать  таблицу ---->
+
+    <!---- Добавление нового поля  -------->
+<!--    <div v-if="tableName" class="pgadmin-control-group form-group"-->
 <!--         style="width: 250px !important; position: relative; border:1px gainsboro solid; padding:4px" >-->
 <!--        <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="width: 100%;">-->
 <!--            <input class="form-control" type="text" style="border-radius: 0px"-->
-<!--                   v-model="newTable.name"-->
-<!--                   placeholder="Имя таблицы" >-->
+<!--                   v-model="newField.name"-->
+<!--                   placeholder="Имя поля" >-->
 <!---->
-<!--            <input class="form-control" type="text" style="border-radius: 0px"-->
-<!--                   v-model="newTable.idName"-->
-<!--                   placeholder="id" >-->
+<!--            <select v-model="newField.type" class="form-control"-->
+<!--                    placeholder="Тип поля" style="cursor:pointer; border-radius: 0px;">-->
+<!--                    <option v-for="(item, i) in tableFieldTypes" :value="item.name" class="form-control">-->
+<!--                       {{item.name}}-->
+<!--                    </option>-->
+<!--            </select>-->
+<!---->
 <!--        </div>-->
-<!--        <button @click="createTable()" class="btn btn-primary m-1 no-radius"-->
+<!--        <button @click="addField()" class="btn btn-primary m-1 no-radius"-->
 <!--                style="width: 98%; margin-left:1px !important; ">-->
-<!--            Добавить новую таблицу-->
+<!--                Добавить новое поле-->
 <!--        </button>-->
 <!--    </div>-->
-    <!---- // Добавление новой таблицы ---->
-
-    <!---- Добавление нового поля  -------->
-    <div v-if="tableName" class="pgadmin-control-group form-group"
-         style="width: 250px !important; position: relative; border:1px gainsboro solid; padding:4px" >
-        <div class="pgadmin-controls pg-el-sm-9 pg-el-12" style="width: 100%;">
-            <input class="form-control" type="text" style="border-radius: 0px"
-                   v-model="newField.name"
-                   placeholder="Имя поля" >
-
-            <select v-model="newField.type" class="form-control"
-                    placeholder="Тип поля" style="cursor:pointer; border-radius: 0px;">
-                    <option v-for="(item, i) in tableFieldTypes" :value="item.name" class="form-control">
-                       {{item.name}}
-                    </option>
-            </select>
-
-        </div>
-        <button @click="addField()" class="btn btn-primary m-1 no-radius"
-                style="width: 98%; margin-left:1px !important; ">
-                Добавить новое поле
-        </button>
-    </div>
     <!---- // Добавление нового поля ----->
 
 </template>
@@ -145,7 +180,7 @@
                     Скопировать базу
                 </button>
             </div>
-            <!---- Скопировать  базу ---->
+            <!---- / Скопировать  базу ---->
 
             <div class="pgadmin-control-group form-group"
                  style="width: 220px !important; position: relative; border:1px gainsboro solid; padding:4px;" >
